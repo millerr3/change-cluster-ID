@@ -1,0 +1,3 @@
+current.cluster.ids <- c(0:10)
+new.cluster.ids <- c("IL18R+", "ILC2s", "stressed ILC2s", "IL18R+_2", "IL18R+_3", "ILC2_2", "NK cells", "ILC3/NK cells", "Lung T cells", "Thymic T cells", "Fibroblasts")
+seurat_object@meta.data$celltype <- plyr::mapvalues(x = seurat_object@meta.data[, "seurat_clusters"], from = current.cluster.ids, to = new.cluster.ids)
